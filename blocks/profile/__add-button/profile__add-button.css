@@ -1,0 +1,8 @@
+.profile__add-button {
+    padding: 14px 64px;
+    border: 2px solid white;
+    grid-area: add;
+    margin-left: 165px;
+    height: 22px;
+    width: 22px;
+}

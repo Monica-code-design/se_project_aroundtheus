@@ -1,0 +1,9 @@
+.profile__info {
+    padding-top: 62px;
+    padding-left: 30px;
+    display: grid;
+    grid-template-areas:
+        "title edit add"
+        "description none none"
+        ;
+}
