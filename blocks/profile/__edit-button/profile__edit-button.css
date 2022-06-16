@@ -1,9 +1,25 @@
 .profile__edit-button {
-       grid-area: edit;
-       margin-left: 18px;
-       padding: 7px;
-       height: 10px;
-       width: 10px;
-       border: 1px solid white;
-       align-self: center;
+    grid-area: edit;
+    padding: 7px;
+    border: 1px solid white;
+    -ms-grid-row-align: center;
+        align-self: center;
+    background: transparent;
+}
+
+.profile__edit-button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .profile__edit-button {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .profile__edit-button {
+        padding: 5px;
+    }
 }

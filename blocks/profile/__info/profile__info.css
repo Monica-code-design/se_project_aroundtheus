@@ -1,9 +1,28 @@
 .profile__info {
-    padding-top: 62px;
-    padding-left: 30px;
+    display: -ms-grid;
     display: grid;
-    grid-template-areas:
-        "title edit add"
-        "description none none"
-        ;
+    -ms-grid-rows: auto 9px auto;
+        grid-template-areas:
+        "title edit"
+        "description none";
+    -ms-grid-columns: minmax(auto, 373px) 17px auto;
+    grid-template-columns: minmax(auto, 373px) auto;
+    grid-gap: 9px 17px;
+}
+
+@media screen and (max-width: 800px) {
+    .profile__info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+            grid-template-areas: none;
+        grid-gap: unset;
+        -ms-grid-columns: none;
+        grid-template-columns: none;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
 }

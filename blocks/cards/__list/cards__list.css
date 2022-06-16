@@ -1,7 +1,10 @@
 .cards__list {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, 281px);
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     grid-gap: 20px 18px;
     list-style-type: none;
     margin: 0;

@@ -4,6 +4,15 @@
     font-size: 42px;
     line-height: 1.1;
     grid-area: title;
-    width: 373px;
-    height: 39px;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 450px) {
+    .profile__title {
+        font-size: 22px;
+        min-width: 201px;
+    }
 }
