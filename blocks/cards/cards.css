@@ -1,3 +1,9 @@
 .cards {
     padding: 15px 0 36px;
 }
+
+@media screen and (max-width: 450px) {
+    .cards {
+        padding: 0 0 48px;
+    }
+}

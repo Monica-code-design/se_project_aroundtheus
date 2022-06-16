@@ -5,7 +5,21 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    height: 74px;
-    margin: 45px auto 0;
-    border-bottom: 1px solid #545454d1;
+    margin: 28px auto 0;
+    border-bottom: 1px solid rgba(84,84,84,0.7);
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+}
+
+@media screen and (max-width: 920px) {
+    .header {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+        width: 100%;
+    }
 }

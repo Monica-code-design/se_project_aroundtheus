@@ -5,7 +5,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    grid-gap: 20px 18px;
+    gap: 20px 18px;
     list-style-type: none;
     margin: 0;
     padding: 0;

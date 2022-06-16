@@ -4,5 +4,14 @@
             align-items: flex-start;
     width: 173px;
     height: 33px;
-    padding: 0 auto 0;
+    padding-bottom: 41px;
+}
+
+@media screen and (max-width: 450px) {
+    .header__logo {
+        width: 126px;
+        height: 24px;
+        padding-bottom: 32px;
+        padding-left: 27px;
+    }
 }
