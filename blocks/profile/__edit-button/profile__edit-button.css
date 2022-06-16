@@ -4,7 +4,7 @@
     border: 1px solid white;
     -ms-grid-row-align: center;
         align-self: center;
-    background: transparent;
+    background: transparent url("../../../images/edit.svg") center no-repeat;
 }
 
 .profile__edit-button:hover {
