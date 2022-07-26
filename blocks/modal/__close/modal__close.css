@@ -1,0 +1,25 @@
+.modal__close {
+    background: url(../../../images/Close\ Icon.svg) no-repeat;
+    border-style: unset;
+    width: 40px;
+    height: 40px;
+    border: none;
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    -webkit-transform: translate(100%,-100%);
+        -ms-transform: translate(100%,-100%);
+            transform: translate(100%,-100%);
+}
+
+@media screen and (max-width: 575px) {
+    .modal__close {
+        -webkit-transform: translate(0%,-150%);
+            -ms-transform: translate(0%,-150%);
+                transform: translate(0%,-150%);
+        background-size: 26px;
+    }
+}
