@@ -10,9 +10,15 @@
     top: 0;
     right: 0;
     z-index: 10;
+    cursor: pointer;
+    transition: 0.3s;
     -webkit-transform: translate(100%,-100%);
         -ms-transform: translate(100%,-100%);
             transform: translate(100%,-100%);
+}
+
+.modal__close:hover {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 575px) {
