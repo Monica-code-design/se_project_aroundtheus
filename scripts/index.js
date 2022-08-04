@@ -25,14 +25,58 @@ const initialCards = [
     }
 ];
 
+const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
+const cardsWrap = document.querySelector(".cards__list");
+const modal = document.querySelector(".modal"); 
+const profileEditForm = document.querySelector(".modal__form")
 const profileEditButton = document.querySelector(".profile__edit-button");
-const modalOpened = document.querySelector(".modal"); 
 const modalClose = document.querySelector(".modal__close");
+const profileNameElement = document.querySelector(".profile__title");
+const profileDescriptionElement = document.querySelector(".profile__description");
+const profileNameInput = profileEditForm.querySelector(".modal__input_type_name");
+const profileDescriptionInput = profileEditForm.querySelector(".modal__input_type_description");
 
-profileEditButton.addEventListener('click', function(){
-    modalOpened.classList.add("modal__opened");
+function openModal() {
+    modal.classList.add("modal__opened");
+}
+
+function closeModal() {
+    modal.classList.remove("modal__opened"); 
+}
+
+profileEditButton.addEventListener('click', () => { 
+
+    profileNameInput.value = profileNameElement.textContent;
+    profileDescriptionInput.value = profileDescriptionElement.textContent;
+
+    openModal();
 });
 
-modalClose.addEventListener('click', function(){
-    modalOpened.classList.remove("modal__opened");
+modalClose.addEventListener('click', closeModal);
+
+profileEditForm.addEventListener('submit', function(evt){
+    evt.preventDefault();
+    const nameInput = evt.target.name.value;
+    const descriptionInput = evt.target.description.value;
+
+    profileNameElement.textContent = nameInput;
+    profileDescriptionElement.textContent = descriptionInput;
+
+    closeModal();
 });
+
+function getCardElement(data) {
+    const cardElement = cardTemplate.cloneNode(true);
+    const cardImage = cardElement.querySelector(".card__image");
+    const cardTitle = cardElement.querySelector(".card__title");
+
+    cardImage.src = data.link;
+    cardImage.alt = data.name;
+    cardTitle.textContent = data.name;
+
+    return cardElement;
+};
+
+for (let i = 0; i < initialCards.length; i++) {
+    cardsWrap.append(getCardElement(initialCards[i]));
+};
