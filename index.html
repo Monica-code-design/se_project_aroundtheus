@@ -32,21 +32,63 @@
             <footer class="footer container">
                 <p class="footer__copyright">© 2022 Around The U.S.</p>
             </footer>
-            <div class="modal">
+            <div class="modal" id="modal-edit">
                 <div class="modal__content">
                     <button class="modal__close" type="button"></button>
                     <h3 class="modal__title">Edit profile</h3>
-                    <form class="modal__form">
-                        <input type="text" class="modal__form modal__input_type_name" placeholder="Name" name="name" required>
-                        <input type="text" class="modal__form modal__input_type_description" placeholder="Description" name="description" required>
+                    <form class="modal__form" id="edit-profile-form">
+                        <input 
+                        type="text" 
+                        class="modal__form modal__input_type_name" 
+                        placeholder="Name" 
+                        name="name" 
+                        required
+                        >
+                        <input 
+                        type="text" 
+                        class="modal__form modal__input_type_description" 
+                        placeholder="Description" 
+                        name="description" 
+                        required
+                        >
                         <button class="modal__button" type="submit">Save</button> 
                     </form>
+                </div>
+            </div>
+            <div class="modal" id="modal-add">
+                <div class="modal__content">
+                    <button class="modal__close" type="button"></button>
+                    <h3 class="modal__title">New Place</h3>
+                    <form class="modal__form" id="add-card-form">
+                        <input 
+                        type="text" 
+                        class="modal__form modal__input_type_name"
+                        placeholder="Title" 
+                        name="title" 
+                        required
+                        >
+                        <input type="text" 
+                        class="modal__form modal__input_type_description" 
+                        placeholder="Image link" 
+                        name="link" 
+                        required
+                        >
+                        <button class="modal__button" type="submit">Create</button> 
+                    </form>
+                </div>
+            </div>
+            <div class="modal" id="modal-image">
+                <div class="modal__content modal__content_type_preview">
+                    <button class="modal__close" type="button"></button>
+                    <img class="modal__preview-image" src="" alt="">
+                    <p class="modal__preview-caption" src="" alt=""></p>
                 </div>
             </div>
         </div>
         <template id="card-template">
             <li class="card">
                 <img class="card__image" src="" alt="">
+                <button aria-label="delete" class="card__delete-button" type="button"></button>
                 <div class="card__description">
                     <h2 class="card__title"></h2>
                     <button aria-label="like" class="card__like-button" type="button"></button>

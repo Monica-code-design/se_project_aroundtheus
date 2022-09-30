@@ -11,3 +11,7 @@
     margin-top: 48px;
     cursor: pointer;
 }
+
+.modal__button:hover {
+    opacity: 0.8;
+}
