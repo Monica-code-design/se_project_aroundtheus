@@ -33,8 +33,8 @@ const profileEditButton = document.querySelector(".profile__edit-button");
 const modalClose = profileModal.querySelector(".modal__close");
 const profileNameElement = document.querySelector(".profile__title");
 const profileDescriptionElement = document.querySelector(".profile__description");
-const profileNameInput = profileEditForm.querySelector(".modal__input_type_name");
-const profileDescriptionInput = profileEditForm.querySelector(".modal__input_type_description");
+const profileNameInput = profileEditForm.querySelector(".modal__input-type_name");
+const profileDescriptionInput = profileEditForm.querySelector(".modal__input-type_description");
 
 const cardModal = document.querySelector("#modal-add"); 
 const cardAddButton = document.querySelector(".profile__add-button");
