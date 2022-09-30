@@ -137,4 +137,4 @@ profileEditForm.addEventListener('submit', function(evt){
 initialCards.forEach(function(cardData) {
     const getCard = getCardElement(cardData);
     renderCard(getCard, cardsWrap);    
-  });
+});
