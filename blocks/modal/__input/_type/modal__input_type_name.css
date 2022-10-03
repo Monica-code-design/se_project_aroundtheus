@@ -1,4 +1,4 @@
-.modal__input-type_description {
+.modal__input_type_name {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -8,5 +8,4 @@
     border-style: unset;
     border-bottom: 1px solid rgb(0,0,0,.2);
     padding-bottom: 13.26px;
-    padding-top: 43px;
 }
