@@ -121,7 +121,7 @@ profileEditForm.addEventListener('submit', function(evt){
     closeModal(profileModal);
 });
 
-  cardForm.addEventListener('submit', (evt) => {
+cardForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     const name = evt.target.title.value;
     const link = evt.target.link.value;
@@ -131,9 +131,10 @@ profileEditForm.addEventListener('submit', function(evt){
     });
     renderCard(newCard, cardsWrap);
     closeModal(cardModal);
+    cardForm.reset();
 });
 
 initialCards.forEach(function(cardData) {
-    const getCard = getCardElement(cardData);
-    renderCard(getCard, cardsWrap);    
+    const card = getCardElement(cardData);
+    renderCard(card, cardsWrap); 
 });
