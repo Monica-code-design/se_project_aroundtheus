@@ -19,11 +19,15 @@
 @import url(../blocks/modal/__close/modal__close.css);
 @import url(../blocks/modal/__content/modal__content.css);
 @import url(../blocks/modal/__content/_type/modal__content_type_preview.css);
+@import url(../blocks/modal/__error/modal__error.css);
+@import url(../blocks/modal/__error/_visible/modal__error_visible.css);
 @import url(../blocks/modal/__form/modal__form.css);
 @import url(../blocks/modal/__input/_type/modal__input_type_description.css);
 @import url(../blocks/modal/__input/_type/modal__input_type_name.css);
+@import url(../blocks/modal/__label/modal__label.css);
 @import url(../blocks/modal/__title/modal__title.css);
 @import url(../blocks/modal/__button/modal__button.css);
+@import url(../blocks/modal/__button/_disabled/modal__button_disabled.css);
 @import url(../blocks/modal/modal.css);
 @import url(../blocks/modal/__opened/modal__opened.css);
 @import url(../blocks/modal/__preview-caption/modal__preview-caption.css);

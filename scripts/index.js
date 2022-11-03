@@ -46,12 +46,54 @@ const previewImageElement = document.querySelector(".modal__preview-image");
 const previewModalClose = imageModal.querySelector(".modal__close");
 const previewModalCaption = imageModal.querySelector(".modal__preview-caption");
 
+
+const isEscEvent = (evt, action) => {
+    const activeModal = document.querySelector(".modal__opened");
+    if (evt.key === "Escape") {
+        action(activeModal);
+    }
+};
+
+const handleEscUp = (evt) => {
+    evt.preventDefault();
+    isEscEvent(evt, closeModal);
+};
+
+profileModal.addEventListener("mousedown", (evt) => {
+    if (
+        evt.target.classList.contains("modal") ||
+        evt.target.classList.contains("modal__close")
+    ) {
+        closeModal(profileModal);
+    }
+});
+
+cardModal.addEventListener("mousedown", (evt) => {
+    if (
+        evt.target.classList.contains("modal") ||
+        evt.target.classList.contains("modal__close")
+    ) {
+        closeModal(cardModal);
+    }
+});
+
+imageModal.addEventListener("mousedown", (evt) => {
+    if (
+        evt.target.classList.contains("modal") ||
+        evt.target.classList.contains("modal__close")
+    ) {
+        closeModal(imageModal);
+    }
+});
+
 function openModal(modal) {
     modal.classList.add("modal__opened");
+    document.addEventListener("keyup", handleEscUp);
 }
 
 function closeModal(modal) {
     modal.classList.remove("modal__opened");
+    document.removeEventListener("keyup", handleEscUp);
 }
 
 function renderCard(cardElement, container) {
