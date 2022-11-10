@@ -49,8 +49,8 @@ const previewModalClose = imageModal.querySelector(".modal__close");
 const previewModalCaption = imageModal.querySelector(".modal__preview-caption");
 
 const handleEscUp = (evt) => {
-    const activeModal = document.querySelector(".modal__opened");
     if (evt.key === "Escape") {
+        const activeModal = document.querySelector(".modal__opened");
         closeModal(activeModal);
     }
 };
@@ -119,7 +119,6 @@ profileModalClose.addEventListener('click', () => {
 });
 
 cardAddButton.addEventListener('click', () => {
-    toggleButtonState(inputList, addSubmitButton, {inactiveButtonClass: "modal__button_disabled"});
     openModal(cardModal);
 });
 
@@ -154,6 +153,7 @@ cardForm.addEventListener('submit', (evt) => {
     renderCard(newCard, cardsWrap);
     closeModal(cardModal);
     cardForm.reset();
+    toggleButtonState(inputList, addSubmitButton, {inactiveButtonClass: "modal__button_disabled"});
 });
 
 initialCards.forEach(function(cardData) {
