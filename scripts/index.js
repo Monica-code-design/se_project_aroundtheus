@@ -39,61 +39,38 @@ const profileDescriptionInput = profileEditForm.querySelector(".modal__input_typ
 const cardModal = document.querySelector("#modal-add"); 
 const cardAddButton = document.querySelector(".profile__add-button");
 const cardModalClose = cardModal.querySelector(".modal__close");
-const cardForm = document.querySelector("#add-card-form");
+const cardForm = document.querySelector(".modal__form_add");
+const inputList = [...cardForm.querySelectorAll(".modal__input")];
+const addSubmitButton = cardModal.querySelector(".modal__button");
 
 const imageModal = document.querySelector("#modal-image");
 const previewImageElement = document.querySelector(".modal__preview-image");
 const previewModalClose = imageModal.querySelector(".modal__close");
 const previewModalCaption = imageModal.querySelector(".modal__preview-caption");
 
-
-const isEscEvent = (evt, action) => {
+const handleEscUp = (evt) => {
     const activeModal = document.querySelector(".modal__opened");
     if (evt.key === "Escape") {
-        action(activeModal);
+        closeModal(activeModal);
     }
 };
 
-const handleEscUp = (evt) => {
-    evt.preventDefault();
-    isEscEvent(evt, closeModal);
+function closeModalOnRemoteClick(evt) {
+    if (evt.target === evt.currentTarget || evt.target.classList.contains("modal__close")) {
+        closeModal(evt.target);
+    }
 };
-
-profileModal.addEventListener("mousedown", (evt) => {
-    if (
-        evt.target.classList.contains("modal") ||
-        evt.target.classList.contains("modal__close")
-    ) {
-        closeModal(profileModal);
-    }
-});
-
-cardModal.addEventListener("mousedown", (evt) => {
-    if (
-        evt.target.classList.contains("modal") ||
-        evt.target.classList.contains("modal__close")
-    ) {
-        closeModal(cardModal);
-    }
-});
-
-imageModal.addEventListener("mousedown", (evt) => {
-    if (
-        evt.target.classList.contains("modal") ||
-        evt.target.classList.contains("modal__close")
-    ) {
-        closeModal(imageModal);
-    }
-});
 
 function openModal(modal) {
     modal.classList.add("modal__opened");
     document.addEventListener("keyup", handleEscUp);
+    modal.addEventListener("mousedown", closeModalOnRemoteClick);
 }
 
 function closeModal(modal) {
     modal.classList.remove("modal__opened");
     document.removeEventListener("keyup", handleEscUp);
+    modal.removeEventListener("mousedown", closeModalOnRemoteClick);
 }
 
 function renderCard(cardElement, container) {
@@ -137,22 +114,25 @@ profileEditButton.addEventListener('click', () => {
     openModal(profileModal);
 });
 
-profileModalClose.addEventListener('click', () =>
-    closeModal(profileModal)
-);
+profileModalClose.addEventListener('click', () => {
+    closeModal(profileModal);
+});
 
-cardAddButton.addEventListener('click', () => 
-    openModal(cardModal)
-);
+cardAddButton.addEventListener('click', () => {
+    toggleButtonState(inputList, addSubmitButton, {inactiveButtonClass: "modal__button_disabled"});
+    openModal(cardModal);
+});
 
-cardModalClose.addEventListener('click', () => 
-    closeModal(cardModal)
-);
-previewModalClose.addEventListener('click', () => 
-    closeModal(imageModal));
+cardModalClose.addEventListener('click', () => {
+    closeModal(cardModal);
+});
 
+previewModalClose.addEventListener('click', () => {
+    closeModal(imageModal);
     
-profileEditForm.addEventListener('submit', function(evt){
+});
+    
+profileEditForm.addEventListener('submit', function (evt) {
     evt.preventDefault();
     const nameInput = evt.target.name.value;
     const descriptionInput = evt.target.description.value;
