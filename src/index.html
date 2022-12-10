@@ -5,22 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Around the US</title>
-        <link rel="stylesheet" href="pages/index.css" />
     </head>
     <body class="page">
         <header class="header">
-            <img src="./images/Around.svg" alt="Around the US" class="header__logo" />
+            <img src="<%= require('./images/Around.svg')%>" alt="Around the US" class="header__logo" />
         </header>
         <div class="page__content">
             <main class="content">
                 <section class="profile">
-                    <img src="./images/jacques-cousteau.png" alt="Portrait of Jacques Cousteau" class="profile__image" />
+                    <img src="<%= require('./images/jacques-cousteau.png')%>" alt="Portrait of Jacques Cousteau" class="profile__image" />
                     <div class="profile__info">
                         <h1 class="profile__title">Jacques Cousteau</h1>
                         <button aria-label="edit" type="button" class="profile__edit-button"></button>
                         <p class="profile__description">Explorer</p>
                     </div>
-                    <button aria-label="add" type="button" class="profile__add-button"></button>
+                    <button aria-label="add" type="button" class="profile__add-button" id="add-button"></button>
                 </section>
 
                 <section class="cards">
@@ -42,7 +41,7 @@
                             type="text" 
                             class="modal__input modal__input_type_name" 
                             id="user-name"
-                            placeholder="Name" 
+                            placeholder="Name"
                             name="name"
                             maxlength="40"
                             minlength="2" 
@@ -78,7 +77,7 @@
                             class="modal__input modal__input_type_name"
                             id="card-name"
                             placeholder="Title" 
-                            name="title" 
+                            name="name" 
                             required
                             >
                             <span class="modal__error" id="card-name-error"></span>
@@ -116,6 +115,5 @@
                 </div>
             </li>
         </template>
-        <script type="module" src="./scripts/index.js"></script>
     </body>
 </html>
