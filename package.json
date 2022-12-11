@@ -1,11 +1,13 @@
 {
   "name": "se_project_aroundtheus",
   "version": "1.0.0",
-  "description": "## Description",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack serve --mode development"
+    "dev": "webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
