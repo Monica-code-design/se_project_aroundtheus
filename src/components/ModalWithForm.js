@@ -15,19 +15,19 @@ export default class ModalWithForm extends Modal {
     return formValues;
   }
 
-  openModal() {
+  closeModal() {
     if (this._resetOnClose) {
       this._modalForm.reset();
     }
-    super.openModal();
+    super.closeModal();
   }
+
   
   setEventListeners() {
     this._modalForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._handleFormSubmit(this._getInputValues());
       this.closeModal();
-      this._modalForm.reset();
     });
     super.setEventListeners();
   }
