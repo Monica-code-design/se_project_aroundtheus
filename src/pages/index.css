@@ -1,7 +1,21 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/fonts.css);
-@import url(../blocks/page/__content/page__content.css);
+
 @import url(../blocks/page/page.css);
+@import url(../blocks/page/__content/page__content.css);
+@import url(../blocks/content/content.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__description/profile__description.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__image/profile__image.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__title/profile__title.css);
+@import url(../blocks/profile/profile.css);
+
 @import url(../blocks/card/__delete-button/card__delete-button.css);
 @import url(../blocks/card/__description/card__description.css);
 @import url(../blocks/card/__image/card__image.css);
@@ -11,11 +25,10 @@
 @import url(../blocks/card/card.css);
 @import url(../blocks/cards/__list/cards__list.css);
 @import url(../blocks/cards/cards.css);
-@import url(../blocks/content/content.css);
+
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/footer/footer.css);
-@import url(../blocks/header/header.css);
-@import url(../blocks/header/__logo/header__logo.css);
+
 @import url(../blocks/modal/__close/modal__close.css);
 @import url(../blocks/modal/__content/modal__content.css);
 @import url(../blocks/modal/__content/_type/modal__content_type_preview.css);
@@ -32,10 +45,3 @@
 @import url(../blocks/modal/__opened/modal__opened.css);
 @import url(../blocks/modal/__preview-caption/modal__preview-caption.css);
 @import url(../blocks/modal/__preview-image/modal__preview-image.css);
-@import url(../blocks/profile/__add-button/profile__add-button.css);
-@import url(../blocks/profile/__description/profile__description.css);
-@import url(../blocks/profile/__edit-button/profile__edit-button.css);
-@import url(../blocks/profile/__image/profile__image.css);
-@import url(../blocks/profile/__info/profile__info.css);
-@import url(../blocks/profile/__title/profile__title.css);
-@import url(../blocks/profile/profile.css);

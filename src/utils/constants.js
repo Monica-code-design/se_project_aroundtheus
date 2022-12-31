@@ -2,7 +2,12 @@
 /*                                  Variables                                 */
 /* -------------------------------------------------------------------------- */
 export const profileEditButton = document.querySelector(".profile__edit-button");
-export const cardAddButton = document.querySelector("#add-button");
+export const cardAddButton = document.querySelector(".profile__add-button");
+export const avatarButton = document.querySelector(".profile__avatar-button");
+
+export const profileNameInput = document.querySelector(".modal__input_type_name");
+export const profileTitleInput = document.querySelector(".modal__input_type_description");
+
 export const validationSettings = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
@@ -16,40 +21,14 @@ export const selectors = {
   cardTemplate: "#card-template",
   previewModal: "#modal-image",
 
-  profileNameInput: ".modal__input_type_name",
-  profileDescriptionInput: ".modal__input_type_description",
-
   profileEditModal: "#modal-edit",
   cardAddModal: "#modal-add", 
-  profileTitleElement: ".profile__title",
-  profileDescriptionElement: ".profile__description"
+  profileNameElement: ".profile__title",
+  profileTitleElement: ".profile__description",
+
+  avatarModalElement: "#avatar-modal",
+  avatarButton: "#avatar-button",
+  avatarImage: ".profile__image",
+
+  confirmModal: "#confirm-modal"
 };
-/* -------------------------------------------------------------------------- */
-/*                                 Cards Array                                */
-/* -------------------------------------------------------------------------- */
-export const initialCards = [
-  {
-    name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
-  },
-  {
-    name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
-  },
-  {
-    name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
-  },
-  {
-    name: "Vanoise National Park",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg"
-  }
-];
