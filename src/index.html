@@ -1,143 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Around the US</title>
-    </head>
-    <body class="page">
-      <header class="header">
-          <img src="<%= require('./images/Around.svg')%>" alt="Around the US" class="header__logo" />
-      </header>
-      <main class="page__content">
-        <section class="profile">
-          <div class="profile__avatar">
-            <button class="profile__avatar-button" id="avatar-button" type="button" aria-label="edit"></button>
-            <img src="<%= require('./images/jacques-cousteau.png')%>" alt="Portrait of Jacques Cousteau" class="profile__image" />
-          </div>
-          <div class="profile__info">
-            <h1 class="profile__title"></h1>
-            <button aria-label="edit" type="button" class="profile__edit-button" id="edit-button"></button>
-            <p class="profile__description"></p>
-          </div>
-          <button aria-label="add" type="button" class="profile__add-button" id="add-button"></button>
-        </section>
-        <section class="cards">
-            <ul class="cards__list"></ul>
-        </section>
-      </main>
-      <footer class="footer container">
-          <p class="footer__copyright">© 2022 Around The U.S.</p>
-      </footer>
-      <div class="modal" id="modal-edit">
-          <div class="modal__content">
-              <button class="modal__close" type="button" aria-label="close"></button>
-              <h3 class="modal__title">Edit profile</h3>
-              <form class="modal__form" id="edit-profile-form" name="profile-edit" novalidate>
-                  <label class="modal__label">
-                      <input 
-                      type="text" 
-                      class="modal__input modal__input_type_name" 
-                      id="user-name"
-                      placeholder="Name"
-                      name="name"
-                      maxlength="40"
-                      minlength="2" 
-                      required/>
-                      <span class="modal__error" id="user-name-error"></span>
-                  </label>
-                  <label class="modal__label">
-                      <input 
-                      type="text" 
-                      class="modal__input modal__input_type_description" 
-                      id="user-description"
-                      placeholder="Description" 
-                      name="about" 
-                      maxlength="200"
-                      minlength="2"
-                      required/>
-                      <span class="modal__error" id="user-description-error"></span>
-                  </label>
-                  <button class="modal__button" type="submit" aria-label="save">Save</button> 
-              </form>
-          </div>
-      </div>
-      <div class="modal" id="modal-add">
-          <div class="modal__content">
-              <button class="modal__close" type="button" aria-label="close"></button>
-              <h3 class="modal__title">New Place</h3>
-              <form class="modal__form" id="add-card-form" novalidate>
-                  <label class="modal__label">
-                      <input 
-                      type="text" 
-                      class="modal__input modal__input_type_name"
-                      id="name"
-                      placeholder="Title" 
-                      name="name" 
-                      required
-                      minlength="2" 
-                      maxlength="30"/>
-                      <span class="modal__error" id="card-name-error"></span>
-                  </label>
-                  <label class="modal__label">
-                      <input 
-                      type="url" 
-                      class="modal__input modal__input_type_description" 
-                      id="card-link"
-                      placeholder="Image link" 
-                      name="link"
-                      minlength="1"
-                      required/>
-                      <span class="modal__error" id="card-link-error"></span>
-                  </label>
-                  <button class="modal__button modal__button_disabled" type="submit" aria-label="save">Create</button> 
-              </form>
-          </div>
-      </div>
-      <div class="modal" id="modal-image">
-          <div class="modal__content modal__content_type_preview">
-              <button class="modal__close" type="button" aria-label="close"></button>
-              <img class="modal__preview-image" src=" " alt=" ">
-              <p class="modal__preview-caption"></p>
-          </div>
-      </div>
-      <div class="modal" id="confirm-modal">
-        <div class="modal__content modal__content_confirm">
-          <form class="modal__form">
-            <h3 class="modal__title modal__title_confirm">Are you sure?</h3>
-            <button class="modal__button" type="submit" aria-label="save">Yes</button>
-          </form>
-          <button class="modal__close" type="button" aria-label="close"></button>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Around The U.S.</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img src="<%=require('./images/header-logo.svg')%>" alt="Around the U.S." class="header__logo"/>
+    </header>
+    <main class="body">
+      <section class="profile">
+        <div class="profile__avatar">
+          <button class="profile__avatar-button" id="avatar-button" type="button" aria-label="edit"></button>
+          <img src="<%=require('./images/profile-image.png')%>" alt="French explorer, Jacques Cousteau" class="profile__image"/>
         </div>
+        <div class="profile__details">
+          <div class="profile__text">
+            <h1 class="profile__name"></h1>
+            <p class="profile__title"></p>
+          </div>
+          <button class="profile__edit-button" id="edit-button" type="button" aria-label="edit"></button>
+        </div>
+        <button class="profile__add-button" id="add-button" type="button" aria-label="add"></button>
+      </section>
+      <section class="cards">
+        <ul class="cards__array"></ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2022 Around The U.S.</p>
+    </footer>
+    <div class="modal" id="edit-modal">
+      <div class="modal__content">
+        <form class="modal__form modal__form_type_edit" id="edit-profile-form" name="profile-edit">
+          <h3 class="modal__title">Edit profile</h3>
+          <input
+            name="name"
+            placeholder="Name"
+            id="owner-name"
+            required
+            minlength="2"
+            maxlength="40"
+            type="text"
+            class="modal__input modal__input_type_name"
+          />
+          <span class="modal__error" id="owner-name-error"></span>
+          <input
+            name="about"
+            placeholder="About"
+            id="owner-description"
+            required
+            minlength="2"
+            maxlength="200"
+            type="text"
+            class="modal__input modal__input_type_title"
+          />
+          <span class="modal__error" id="owner-description-error"></span>
+          <button class="modal__button" type="submit" aria-label="save">Save</button>
+        </form>
+        <button class="modal__close-button" type="button" aria-label="close"></button>
       </div>
-      <div class="modal" id="avatar-modal">
-        <div class="modal__content">
-          <form class="modal__form" id="avatar-form" novalidate>
-            <h3 class="modal__title">Change profile picture</h3>
-            <input
+    </div>
+
+    <div class="modal" id="add-modal">
+      <div class="modal__content">
+        <form class="modal__form" id="add-card-form">
+          <h3 class="modal__title">New Place</h3>
+          <input
+            name="name"
+            placeholder="Title"
+            id="name"
+            minlength="2"
+            maxlength="30"
+            type="text"
+            class="modal__input modal__input_type_name"
+            required
+          />
+          <span class="modal__error" id="name-error"></span>
+          <input
+            name="link"
+            placeholder="Image Link"
+            id="title"
+            minlength="1"
+            type="url"
+            class="modal__input modal__input_type_title"
+            required
+          />
+          <span class="modal__error" id="title-error"></span>
+          <button class="modal__button" type="submit" aria-label="save">Create</button>
+        </form>
+        <button class="modal__close-button" type="button" aria-label="close"></button>
+      </div>
+    </div>
+
+    <div class="modal" id="preview-modal">
+      <div class="modal__content modal__content_preview">
+        <button class="modal__close-button" type="button" aria-label="close"></button>
+        <img class="modal__preview-image" src="#" alt="#"/>
+        <h3 class="modal__preview-text"></h3>
+      </div>
+    </div>
+
+    <div class="modal" id="confirm-modal">
+      <div class="modal__content modal__content_confirm">
+        <form class="modal__form">
+          <h3 class="modal__title modal__title_confirm">Are you sure?</h3>
+          <button class="modal__button" type="submit" aria-label="save">Yes</button>
+        </form>
+        <button class="modal__close-button" type="button" aria-label="close"></button>
+      </div>
+    </div>
+
+    <div class="modal" id="avatar-modal">
+      <div class="modal__content">
+        <form class="modal__form" id="avatar-form" novalidate>
+          <h3 class="modal__title">Change profile picture</h3>
+          <input
             name="avatar"
             placeholder="Image Link"
             id="avatar-link"
             type="url"
             class="modal__input modal__input_type_avatar"
-            required/>
-            <span class="modal__error modal__error_visible" id="avatar-link-error"></span>
-            <button class="modal__button" type="submit" aria-label="save">Save</button>
-          </form>
-          <button class="modal__close" type="button" aria-label="close"></button>
-        </div>
+            required
+          />
+          <span class="modal__error" id="avatar-link-error"></span>
+          <button class="modal__button" type="submit" aria-label="save">Save</button>
+        </form>
+        <button class="modal__close-button" type="button" aria-label="close"></button>
       </div>
-      <template id="card-template">
-          <li class="card">
-              <img class="card__image" src=" " alt=" ">
-              <button aria-label="delete" class="card__delete-button" type="button"></button>
-              <div class="card__description">
-                  <h2 class="card__title"></h2>
-                  <button aria-label="like" class="card__like-button" type="button"></button>
-                  <p class="card__like-counter"></p>
-              </div>
-          </li>
-      </template>
-    </body>
+    </div>
+
+    <template id="card-template">
+      <div class="card">
+        <li class="cards__content">
+          <img src="#" alt="#" class="cards__image"/>
+          <img src="<%=require('./images/trash-icon.svg')%>" alt="delete button" class="cards__delete"/>
+          <div class="cards__details">
+            <h2 class="cards__location"></h2>
+            <div class="cards__likes">
+              <button class="cards__like-button" type="button"></button>
+              <p class="cards__like-counter"></p>
+            </div>
+          </div>
+        </li>
+      </div>
+    </template>
+
+  </body>
 </html>

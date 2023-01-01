@@ -1,14 +1,7 @@
 .profile__image {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin: 0 29px 0 0;
-    -o-object-fit: cover;
-       object-fit: cover;
-}
-
-@media screen and (max-width: 800px) {
-    .profile__image {
-        margin: 0 0 26px 0;
-    }
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  margin-right: 0px;
+  object-fit: cover;
 }

@@ -16,11 +16,9 @@ import ModalWithImage from "../components/ModalWithImage.js";
 import Section from "../components/Section.js";
 import Api from "../components/Api.js";
 import ModalWithConfirmation from "../components/ModalWithConfirmation";
-
 /* -------------------------------------------------------------------------- */
-/*                                  Functions                                 */
+/*                                 Functions                                  */
 /* -------------------------------------------------------------------------- */
-
 const api = new Api("https://around.nomoreparties.co/v1/group-12", {
   authorization: "e3b84c1e-ff20-43fa-83a0-2b037664a87a",
   "Content-Type": "application/json",
@@ -36,28 +34,28 @@ const userInfo = new UserInfo({
 });
 
 Promise.all([api.getUserInfo(), api.getInitialCards()])
-.then(([data, cards]) => {
-  userId = data._id;
-  userInfo.setUserInfo({
-    name: data.name,
-    about: data.about,
-    avatar: data.avatar,
-  });
+  .then(([data, cards]) => {
+    userId = data._id;
+    userInfo.setUserInfo({
+      name: data.name,
+      about: data.about,
+      avatar: data.avatar,
+    });
 
-  cardSection = new Section(
-    {
-      items: cards,
-      renderer: (cardData) => {
-        cardSection.addItem(renderCard(cardData, userId));
+    cardSection = new Section(
+      {
+        items: cards,
+        renderer: (cardData) => {
+          cardSection.addItem(renderCard(cardData, userId));
+        },
       },
-    },
-    selectors.cardListElement
-  );
-  cardSection.renderItems();
-})
-.catch((error) => {
-  console.log(`An error has occured ${error}`);
-});
+      selectors.cardListElement
+    );
+    cardSection.renderItems();
+  })
+  .catch((error) => {
+    console.log(`An error has occured ${error}`);
+  });
 
 function renderCard(cardData, userId) {
   const card = new Card({
@@ -105,7 +103,7 @@ function renderCard(cardData, userId) {
       confirmationModal.openModal();
     },
   });
-  return card.getCardView();
+  return card.getView();
 }
 /* -------------------------------------------------------------------------- */
 /*                                 Validation                                 */
@@ -178,7 +176,7 @@ const newAvatarModal = new ModalWithForm({
 });
 newAvatarModal.setEventListeners();
 
-const imageModal = new ModalWithImage({modalSelector: "#modal-image"});
+const imageModal = new ModalWithImage({modalSelector: "#preview-modal"});
 imageModal.setEventListeners();
 
 const confirmationModal = new ModalWithConfirmation({modalSelector: selectors.confirmModal});

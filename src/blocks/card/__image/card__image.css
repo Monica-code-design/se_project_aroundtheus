@@ -1,7 +1,0 @@
-.card__image {
-    min-height: 282px;
-    max-height: 282px;
-    cursor: pointer;
-    -o-object-fit: cover;
-       object-fit: cover;
-}

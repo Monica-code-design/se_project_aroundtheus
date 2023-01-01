@@ -5,26 +5,27 @@ export default class Modal {
   }
 
   openModal() {
-    this._modal.classList.add("modal__opened");
+    this._modal.classList.add("modal_open");
     document.addEventListener("keyup", this._handleEscClose);
   }
 
   closeModal() {
-    this._modal.classList.remove("modal__opened");
+    this._modal.classList.remove("modal_open");
     document.removeEventListener("keyup", this._handleEscClose);
   }
 
-  _handleEscClose(evt) {
-    evt.preventDefault();
-    if (evt.key === "Escape") {
+  _handleEscClose(event) {
+    event.preventDefault();
+    if (event.key === "Escape") {
       this.closeModal();
     }
   }
 
   setEventListeners() {
-    this._modal.addEventListener("mousedown", (evt) => {
+    this._modal.addEventListener("mousedown", (event) => {
       if (
-        !evt.target.closest(".modal__content") || evt.target.classList.contains("modal__close")
+        !event.target.closest(".modal__content") ||
+        event.target.classList.contains("modal__close-button")
       ) {
         this.closeModal();
       }

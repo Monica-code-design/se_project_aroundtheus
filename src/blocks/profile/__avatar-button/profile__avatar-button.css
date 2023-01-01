@@ -1,0 +1,10 @@
+.profile__avatar-button {
+  background: transparent url(../../../images/edit-avatar-icon.svg) no-repeat center;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 50%;
+  visibility: hidden;
+  z-index: 1;
+}

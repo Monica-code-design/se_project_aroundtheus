@@ -1,9 +1,0 @@
-.modal__content_type_preview {
-    background: transparent;
-    max-width: 75vw;
-    max-height: 75vh;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}

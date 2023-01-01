@@ -1,0 +1,13 @@
+.profile__avatar .profile__image, .profile__avatar .profile__avatar-button {
+  transition: visibility 0.15s, opacity 0.2s ease-in-out;
+}
+
+.profile__avatar:hover .profile__avatar-button {
+  cursor: pointer;
+  visibility: visible;
+}
+
+.profile__avatar:hover .profile__image {
+  cursor: pointer;
+  opacity: 0.2;
+}
