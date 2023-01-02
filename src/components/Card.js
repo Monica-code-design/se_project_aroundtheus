@@ -13,22 +13,21 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._element;
     this._likeButton.addEventListener("click", () => this._handleLikeClick(this));
 
-    this._element;
+
     this._deleteButton.addEventListener("click", () => this._handleDeleteClick(this));
 
-    this._element;
+
     this._imageElement.addEventListener("click", () => this._handleCardClick({ link: this._link, name: this._name }));
   }
 
   _handleLikeButton() {
     if (this.isLiked()) {
-      this._element;
+  
       this._likeButton.classList.add("cards__like-button_active");
     } else {
-      this._element;
+  
       this._likeButton.classList.remove("cards__like-button_active");
     }
   }
